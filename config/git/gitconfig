@@ -1,0 +1,23 @@
+[alias]
+        st = status
+        br = branch
+        co = checkout
+        ci = commit
+        ff = pull --rebase --prune
+        s  = switch
+        r  = restore
+        lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+[ghq]
+        root = ~/code
+[user]
+        name = Takeru Sato
+        email = type.in.type@gmail.com
+[core]
+        editor = vim
+[merge]
+        conflictStyle = diff3
+        tool = vimdiff
+[mergetool]
+        keepBackup = false
+[include]
+        path = ~/.gitignore.local

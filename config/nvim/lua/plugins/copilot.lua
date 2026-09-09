@@ -1,0 +1,89 @@
+return {
+	-- {
+	-- 	"zbirenbaum/copilot.lua",
+	-- 	config = function()
+	-- 		require("copilot").setup({
+	-- 			suggestions = { enable = false },
+	-- 			panels = { enable = false },
+	-- 		})
+	-- 	end,
+	-- },
+	--
+	-- {
+	-- 	"CopilotC-Nvim/CopilotChat.nvim",
+	-- 	dependencies = {
+	-- 		{ "nvim-lua/plenary.nvim" },
+	-- 	},
+	-- 	build = "make tiktoken",
+	-- 	opts = {
+	-- 		-- See Configuration section for options
+	-- 	},
+	-- 	keys = {
+	-- 		{ "<leader>a", "", desc = "+ai", mode = { "n", "x" } },
+	-- 		{
+	-- 			"<leader>aa",
+	-- 			function()
+	-- 				return require("CopilotChat").toggle()
+	-- 			end,
+	-- 			desc = "Toggle (CopilotChat)",
+	-- 			mode = { "n", "x" },
+	-- 		},
+	-- 		{
+	-- 			"<leader>ax",
+	-- 			function()
+	-- 				return require("CopilotChat").reset()
+	-- 			end,
+	-- 			desc = "Clear (CopilotChat)",
+	-- 			mode = { "n", "x" },
+	-- 		},
+	-- 		{
+	-- 			"<leader>aq",
+	-- 			function()
+	-- 				vim.ui.input({
+	-- 					prompt = "Quick Chat: ",
+	-- 				}, function(input)
+	-- 					if input ~= "" then
+	-- 						require("CopilotChat").ask(input)
+	-- 					end
+	-- 				end)
+	-- 			end,
+	-- 			desc = "Quick Chat (CopilotChat)",
+	-- 			mode = { "n", "x" },
+	-- 		},
+	-- 		{
+	-- 			"<leader>ap",
+	-- 			function()
+	-- 				require("CopilotChat").select_prompt()
+	-- 			end,
+	-- 			desc = "Prompt Actions (CopilotChat)",
+	-- 			mode = { "n", "x" },
+	-- 		},
+	-- 	},
+	-- 	config = function(_, opts)
+	-- 		local chat = require("CopilotChat")
+	--
+	-- 		vim.api.nvim_create_autocmd("BufEnter", {
+	-- 			pattern = "copilot-chat",
+	-- 			callback = function()
+	-- 				vim.opt_local.relativenumber = false
+	-- 				vim.opt_local.number = false
+	-- 			end,
+	-- 		})
+	--
+	-- 		chat.setup(opts)
+	-- 	end,
+	-- },
+	--
+	-- {
+	-- 	"folke/edgy.nvim",
+	-- 	optional = true,
+	-- 	opts = function(_, opts)
+	-- 		opts.right = opts.right or {}
+	-- 		table.insert(opts.right, {
+	-- 			ft = "copilot-chat",
+	-- 			title = "Copilot Chat",
+	-- 			size = { width = 50 },
+	-- 		})
+	-- 	end,
+	-- },
+}

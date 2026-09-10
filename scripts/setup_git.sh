@@ -23,19 +23,19 @@ set -euo pipefail
 #
 # case "$(uname -s)" in
 # Darwin)
-#   ln -sfn "$DOTFILES_DIR/git/gitconfig.mac" "$HOME/.gitconfig.local"
+#   ln -sfn "$DOTFILES_DIR/config/git/gitconfig.mac" "$HOME/.gitconfig.local"
 #   ;;
 # Linux)
 #   if grep -qi microsoft /proc/version 2>/dev/null; then
 #     install_gcm
-#     ln -sfn "$DOTFILES_DIR/git/gitconfig.wsl" "$HOME/.gitconfig.local"
+#     ln -sfn "$DOTFILES_DIR/config/git/gitconfig.wsl" "$HOME/.gitconfig.local"
 #   else
-#     ln -sfn "$DOTFILES_DIR/git/gitconfig.linux" "$HOME/.gitconfig.local"
+#     ln -sfn "$DOTFILES_DIR/config/git/gitconfig.linux" "$HOME/.gitconfig.local"
 #   fi
 #   ;;
 # esac
 
-cat "$DOTFILES_DIR/git/gitconfig" >"$HOME/.gitconfig"
+cat "$DOTFILES_DIR/config/git/gitconfig" >"$HOME/.gitconfig"
 
 # GitHub
 if ! gh auth status >/dev/null 2>&1; then

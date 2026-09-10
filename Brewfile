@@ -20,7 +20,6 @@ brew "duckdb"
 brew "openssl@3"
 brew "curl"
 brew "rustup"
-brew "gcsfuse"
 
 brew "kubernetes-cli"
 brew "kustomize"
@@ -33,12 +32,12 @@ brew "kind"
 
 brew "sbt"
 brew "scala-cli"
-brew "clang"
 brew "clang-format"
-brew "llvm"
-brew "terraform"
 brew "mkcert"
-brew "zlib"
+
+if OS.linux?
+  brew "gcsfuse"
+end
 
 cask "ngrok"
 cask "gcloud-cli"

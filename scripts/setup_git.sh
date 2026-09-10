@@ -35,6 +35,8 @@ set -euo pipefail
 #   ;;
 # esac
 
+cat "$DOTFILES/git/gitconfig" >"$HOME/.gitconfig"
+
 # GitHub
 if ! gh auth status >/dev/null 2>&1; then
   gh auth login --git-protocol https

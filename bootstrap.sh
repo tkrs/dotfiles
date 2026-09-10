@@ -5,10 +5,12 @@ set -euo pipefail
 export DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 NO_ADMIN=false
+NO_BREW=false
 
 for arg in "$@"; do
   case "$arg" in
   --no-admin) NO_ADMIN=true ;;
+  --no-brew) NO_BREW=true ;;
   esac
 done
 
@@ -55,13 +57,15 @@ install_brew_no_admin() {
   eval "$("$prefix/bin/brew" shellenv)"
 }
 
-if [[ "$NO_ADMIN" == "false" ]]; then
-  install_brew
-else
-  install_brew_no_admin
-fi
+if [[ "$NO_BREW" == "false" ]]; then
+  if [[ "$NO_ADMIN" == "false" ]]; then
+    install_brew
+  else
+    install_brew_no_admin
+  fi
 
-brew bundle --file="$DOTFILES_DIR/Brewfile"
+  brew bundle --file="$DOTFILES_DIR/Brewfile"
+fi
 
 "$DOTFILES_DIR/scripts/setup_git.sh"
 "$DOTFILES_DIR/scripts/setup_mise.sh"

@@ -3,7 +3,9 @@
 set -euo pipefail
 
 if command -v mise >/dev/null 2>&1; then
-  ln -sfn "$DOTFILES_DIR/mise/config.toml" ~/.config/mise/config.toml
+  mkdir -p "$HOME/.config/mise"
+
+  ln -sfn "$DOTFILES_DIR/config/mise/config.toml" "$HOME/.config/mise/config.toml"
 
   mise install
 fi

@@ -41,7 +41,7 @@ brew "ngrok"
 brew "mkcert"
 brew "zlib"
 
-cask "gcloud-sdk"
+cask "gcloud-cli"
 cask "google-chrome"
 cask "copilot-cli"
 cask "ghostty"

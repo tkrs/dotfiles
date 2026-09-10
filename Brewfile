@@ -31,7 +31,6 @@ brew "containerd"
 brew "kind"
 
 brew "sbt"
-brew "scala-cli"
 brew "clang-format"
 brew "mkcert"
 

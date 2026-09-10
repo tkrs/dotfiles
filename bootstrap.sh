@@ -4,6 +4,14 @@ set -euo pipefail
 
 export DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
+NO_ADMIN=false
+
+for arg in "$@"; do
+  case "$arg" in
+  --no-admin) NO_ADMIN=true ;;
+  esac
+done
+
 install_brew() {
   if command -v brew >/dev/null 2>&1; then
     return
@@ -34,7 +42,24 @@ install_brew() {
   fi
 }
 
-install_brew
+install_brew_no_admin() {
+  local prefix="$HOME/.homebrew"
+
+  if [[ ! -x "$prefix/bin/brew" ]]; then
+    mkdir -p "$prefix"
+
+    curl -fsSL https://github.com/Homebrew/brew/tarball/main |
+      tar xz --strip-components=1 -C "$prefix"
+  fi
+
+  eval "$("$prefix/bin/brew" shellenv)"
+}
+
+if [[ "$NO_ADMIN" == "false" ]]; then
+  install_brew
+else
+  install_brew_no_admin
+fi
 
 brew bundle --file="$DOTFILES_DIR/Brewfile"
 

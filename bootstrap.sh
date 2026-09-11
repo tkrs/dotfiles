@@ -71,3 +71,4 @@ fi
 "$DOTFILES_DIR/scripts/setup_mise.sh"
 "$DOTFILES_DIR/scripts/setup_fish.sh"
 "$DOTFILES_DIR/scripts/setup_tmux.sh"
+"$DOTFILES_DIR/scripts/setup_nvim.sh"

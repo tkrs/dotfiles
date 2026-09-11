@@ -7,14 +7,14 @@ if command -v fish >/dev/null 2>&1; then
   mkdir -p ~/.config/fish/conf.d
   mkdir -p ~/.config/fish/functions
 
-  ln -sfn "$DOTFILES_DIR/fish/config.fish" ~/.config/fish/config.fish
-  ln -sfn "$DOTFILES_DIR/fish/conf.d/brew.fish" ~/.config/fish/conf.d/brew.fish
-  ln -sfn "$DOTFILES_DIR/fish/conf.d/cargo.fish" ~/.config/fish/conf.d/cargo.fish
-  ln -sfn "$DOTFILES_DIR/fish/conf.d/mise.fish" ~/.config/fish/conf.d/mise.fish
+  ln -sfn "$DOTFILES_DIR/config/fish/config.fish" ~/.config/fish/config.fish
+  ln -sfn "$DOTFILES_DIR/config/fish/conf.d/brew.fish" ~/.config/fish/conf.d/brew.fish
+  ln -sfn "$DOTFILES_DIR/config/fish/conf.d/cargo.fish" ~/.config/fish/conf.d/cargo.fish
+  ln -sfn "$DOTFILES_DIR/config/fish/conf.d/mise.fish" ~/.config/fish/conf.d/mise.fish
 
-  ln -sfn "$DOTFILES_DIR/fish/functions/gcd.fish" ~/.config/fish/functions/gcd.fish
-  ln -sfn "$DOTFILES_DIR/fish/functions/gcloud-config.fish" ~/.config/fish/functions/gcloud-config.fish
-  ln -sfn "$DOTFILES_DIR/fish/functions/ls.fish" ~/.config/fish/functions/ls.fish
+  ln -sfn "$DOTFILES_DIR/config/fish/functions/gcd.fish" ~/.config/fish/functions/gcd.fish
+  ln -sfn "$DOTFILES_DIR/config/fish/functions/gcloud-config.fish" ~/.config/fish/functions/gcloud-config.fish
+  ln -sfn "$DOTFILES_DIR/config/fish/functions/ls.fish" ~/.config/fish/functions/ls.fish
 
   fish -c '
 if not functions -q fisher

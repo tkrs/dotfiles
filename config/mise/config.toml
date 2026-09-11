@@ -1,6 +1,9 @@
 [tools]
 java = "latest"
 node = "latest"
-python = "latest"
 terraform = "latest"
 scala-cli = "latest"
+sbt = "latest"
+python = "latest"
+uv = "latest"
+rye = "latest"

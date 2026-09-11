@@ -8,4 +8,6 @@ if command -v nvim >/dev/null 2>&1; then
     mkdir -p "$(dirname "$dest_file")"
     ln -sfn "$source_file" "$dest_file"
   done
+
+  nvim --headless "+Lazy! sync" +qa
 fi
